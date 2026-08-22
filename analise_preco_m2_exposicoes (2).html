@@ -515,7 +515,7 @@ const EXPOS = [
     total:16813716.14, area:1472.50, rsm2:11418.48,
     isPlanned:true,
     areaCenarioA:1995.34, rsm2CenarioA:8014.19,
-    areaCenarioB:1598.57, rsm2CenarioB:10004.75,
+    areaCenarioB:378.23, rsm2CenarioB:2170.99, totalCenarioB:821134.99,
     areaCenarioCsemTemp:1094.27, totalCenarioCsemTemp:15992581.15, rsm2CenarioCsemTemp:14614.84,
     divider:'maz3', area_img:'mazPlantaTerreo', demo_img:'mazPlantaMezanino',
     areaBreakdown:{
@@ -563,24 +563,25 @@ const EXPOS = [
       ['Equipamentos','Telas de LED (LED Marketing)',529999.68,3.15],
     ],
     subtotalPct:35,
-    areaNote:'Planta "25MAZBEL-EXP-PE02_LAYOUT | EXPOGRAFIA_R07" (be.bo + guá arquitetura, rev. 07, 15/05/2026) — quadro de áreas do térreo e mezanino, 1.267,21 m² + 728,13 m² = 1.995,34 m² no total. O cálculo principal (Cenário C) considera Foyer e Pinguela como área expositiva — o Foyer abriga a esfera de projeção e a Pinguela simula a travessia sobre o rio — e agora também inclui o Mezanino, onde será instalada a próxima exposição temporária, seguindo o mesmo critério do Museu do Jardim Botânico (que incluiu a área de temporária no cálculo). Espaço Criativo e Sala Multiuso continuam de fora, como no espaço equivalente do JB; nas demais exposições de referência não existem espaços equivalentes a esses dois.',
+    areaNote:'Planta "25MAZBEL-EXP-PE02_LAYOUT | EXPOGRAFIA_R07" (be.bo + guá arquitetura, rev. 07, 15/05/2026) — quadro de áreas do térreo e mezanino, 1.267,21 m² + 728,13 m² = 1.995,34 m² no total. O cálculo principal (Cenário 1) considera Foyer e Pinguela como área expositiva — o Foyer abriga a esfera de projeção e a Pinguela simula a travessia sobre o rio — e agora também inclui o Mezanino, onde será instalada a próxima exposição temporária, seguindo o mesmo critério do Museu do Jardim Botânico (que incluiu a área de temporária no cálculo). Espaço Criativo e Sala Multiuso continuam de fora, como no espaço equivalente do JB; nas demais exposições de referência não existem espaços equivalentes a esses dois.',
     ressalvas:[
-      {t:'Este número já soma longa duração + próxima temporária', c:'A partir desta versão, o cálculo do MAZ combina o orçamento e a área da Expo Longa com os da próxima exposição temporária (que ocupa o Mezanino), porque a área do Mezanino só se justifica incluir junto com o gasto que a ocupa. Orçamento: R$ 15.992.581,15 (Expo Longa, sem obra) + R$ 821.134,99 (Nova Temporária, sem obra) = R$ 16.813.716,14. Área: 1.094,27 m² + 378,23 m² (Mezanino) = 1.472,50 m².'},
+      {t:'Este número já soma longa duração + próxima temporária', c:'A partir desta versão, o cálculo principal (Cenário 1) combina o orçamento e a área da Expo Longa com os da próxima exposição temporária (que ocupa o Mezanino), porque a área do Mezanino só se justifica incluir junto com o gasto que a ocupa. Orçamento: R$ 15.992.581,15 (Expo Longa, sem obra) + R$ 821.134,99 (Nova Temporária, sem obra) = R$ 16.813.716,14. Área: 1.094,27 m² + 378,23 m² (Mezanino) = 1.472,50 m². O Cenário 3 isola só a temporária: R$ 821.134,99 (orçamento próprio, sem obra) ÷ 378,23 m² (só o Mezanino) = R$ 2.170,99/m².'},
       {t:'Pendência em aberto — orçamento do Foyer', c:'A área do Foyer entra no cálculo (é onde fica a esfera de projeção), mas o orçamento do Foyer é uma linha separada no orçamento do MAZ (fora de "Expo Longa") e não está somado ao numerador — ver R$ 867.519,79 em "Outros gastos do museu" abaixo. Isso significa que o R$/m² atual é dividido por uma área que inclui o Foyer sem incluir o custo do Foyer. Ainda não foi decidido se esse valor deve entrar no cálculo.'},
       {t:'Planejado, não executado', c:'As referências usam custo final já entregue. O MAZ ainda está em obra, então este painel usa o teto orçamentário (planejado), por instrução do requisitante. O realizado até o momento da Expo Longa é de R$ 12.986.405,86 — cerca de 72% do planejado. O número final pode se mover para baixo se o realizado ficar abaixo do planejado.'},
       {t:'Escala', c:'Os museus de referência têm exposições relativamente compactas (321 a 659 m²); o conjunto Longa + Temporária do MAZ é bem maior. Normalmente o R$/m² cai com o aumento de escala, pela diluição de custos fixos de projeto e gestão — o MAZ estar mais caro apesar da escala maior é um sinal mais forte de disparidade de custo, não mais fraco.'},
+      {t:'O MAZ não é um prédio novo — é um galpão histórico reformado pela Vale', c:'O MAZ ocupa o Armazém 4A, galpão histórico existente do Porto Futuro II (Belém), e não uma construção erguida do zero. A reforma estrutural do prédio-base (recuperação de estrutura metálica histórica, restauro de portões, cobertura, mezanino, instalações elétricas e hidrossanitárias etc.) foi executada e paga pela Vale, com orçamento próprio de R$ 37.483.157,41 (planilha CAPEX Armazém 4A, rev. 11, 20/03/2025) — esse valor não passa pelo orçamento do IDG e não entra em nenhum número deste painel. Ele é citado aqui só para dar o quadro completo: o "prédio pronto" que a Expo Longa ocupa já veio de uma intervenção civil pesada, mas essa intervenção não é um custo do IDG nem da exposição.'},
       {t:'Localização', c:'Belém tem logística de material e mão de obra especializada mais cara que São Paulo/Rio de Janeiro (frete, deslocamento de equipes). Isso explica parte da diferença, mas dificilmente explica uma disparidade tão grande frente à média da referência.'},
       {t:'Ponto de atenção — Equipamentos/Infraestrutura', c:'Este módulo (R$ 3.822.203,40 — 23% do subtotal) é proporcionalmente maior que a maioria da referência; só o Jardim Botânico chega perto dessa proporção. Recomenda-se abrir esse módulo fornecedor por fornecedor para identificar concentração ou eventual duplicidade — use o drill-down abaixo.'},
       {t:'Achado — dois lançamentos "RCM" com nomes parecidos', c:'Foram localizados dois lançamentos da RCM com nomenclatura similar ("TR1" e "TR2"), que podem gerar confusão em revisões futuras. "Cenografia | Estruturas metálicas | TR2" (R$ 1.946.850,00) está em Expografia e já contabilizado no cálculo. "Obra | TR1" (R$ 996.772,98) está classificado em Obras e permanece fora do total considerado — este painel não reincluiu o TR1 no cálculo, por instrução do requisitante.'},
     ],
     obraCivilExcluida:{
       total:2702359.04,
-      nota:'Por instrução do requisitante, os módulos de Obras ficam fora do cálculo principal — são custos de infraestrutura predial (o MAZ é um edifício novo erguido do zero no Porto Futuro II), não de conteúdo expositivo, e não são comparáveis aos museus de referência, que ocupam prédios já existentes. Isso vale tanto para a Expo Longa quanto para a próxima temporária.',
+      nota:'Por instrução do requisitante, os módulos de Obras ficam fora do cálculo principal — são custos de infraestrutura predial, não de conteúdo expositivo, e não são comparáveis aos museus de referência da mesma forma que os módulos de expografia. Isso vale tanto para a Expo Longa quanto para a próxima temporária. Importante: o MAZ não é um edifício novo — é o Armazém 4A, galpão histórico existente do Porto Futuro II, totalmente reformado pela Vale (recuperação de estrutura metálica, portões históricos, cobertura, mezanino, instalações etc.). Essa reforma do prédio-base foi paga pela Vale, não pelo orçamento do IDG — ver nota abaixo.',
       itens:[['Obras — Expo Longa (RCM, IMPERADOR, MÉTRICA, ICETECH)',1928173.16],['Equipamento e Material Obra — Expo Longa',4449.00],['Obras — Nova Temporária (RCM)',769736.88]]
     },
     outros:[
       {nome:'Ajurí', tipo:'Exposição temporária já encerrada (não é a que ocupa o Mezanino atual)', total:3198846.16, status:'Encerrada'},
-      {nome:'Foyer', tipo:'A área do Foyer já entra no Cenário C acima, mas o orçamento do Foyer é uma linha própria no orçamento do MAZ (fora de "Expo Longa") e não entra no numerador — valor abaixo ainda não incorporado ao cálculo', total:867519.79, status:'Concluído'},
+      {nome:'Foyer', tipo:'A área do Foyer já entra no Cenário 1 acima, mas o orçamento do Foyer é uma linha própria no orçamento do MAZ (fora de "Expo Longa") e não entra no numerador — valor abaixo ainda não incorporado ao cálculo', total:867519.79, status:'Concluído'},
       {nome:'Sala Multiuso', tipo:'Sala multiuso/educativa compartilhada — fora do cálculo, mesmo critério do espaço equivalente no MJB', total:1548007.35, status:'Concluído'},
     ]
   },
@@ -915,22 +916,22 @@ function renderDetail(e){
         ${e.key==='maz-longa' ? `
         <div class="scenario-row">
           <div class="scenario-chip active">
-            <div class="sc-label">Cenário C · longa + temporária (principal)</div>
+            <div class="sc-label">Cenário 1 · longa + temporária (principal)</div>
             <div class="sc-value">${fmtM2(e.area)}</div>
             <div class="sc-sub">${fmtInt$(e.rsm2)}/m² — 9 zonas temáticas + Pinguela + Foyer + Mezanino (temporária)</div>
           </div>
           <div class="scenario-chip">
-            <div class="sc-label">Cenário C · só longa duração</div>
+            <div class="sc-label">Cenário 2 · só longa duração</div>
             <div class="sc-value">${fmtM2(e.areaCenarioCsemTemp)}</div>
             <div class="sc-sub">${fmtInt$(e.rsm2CenarioCsemTemp)}/m² — mesma área, sem Mezanino nem orçamento da temporária</div>
           </div>
           <div class="scenario-chip">
-            <div class="sc-label">Cenário B · conteúdo expositivo</div>
+            <div class="sc-label">Cenário 3 · só temporária</div>
             <div class="sc-value">${fmtM2(e.areaCenarioB)}</div>
-            <div class="sc-sub">${fmtInt$(e.rsm2CenarioB)}/m² — inclui Espaço Criativo e Sala Multiuso, sem Foyer</div>
+            <div class="sc-sub">${fmtInt$(e.rsm2CenarioB)}/m² — só o Mezanino, com o orçamento próprio da temporária (sem obra)</div>
           </div>
           <div class="scenario-chip">
-            <div class="sc-label">Cenário A · planta total</div>
+            <div class="sc-label">Cenário 4 · planta total</div>
             <div class="sc-value">${fmtM2(e.areaCenarioA)}</div>
             <div class="sc-sub">${fmtInt$(e.rsm2CenarioA)}/m² — inclui loja, sanitários e áreas técnicas</div>
           </div>
@@ -938,13 +939,13 @@ function renderDetail(e){
         ${infoBox('Ver espaços considerados, um a um (planta rev. 07)', `
           <p>Térreo — ${fmtM2(e.areaBreakdown.terreoTotal)} · Mezanino — ${fmtM2(e.areaBreakdown.mezaninoTotal)} · Total da planta — ${fmtM2(e.areaBreakdown.total)}</p>
           <table style="margin-top:6px;">
-            <thead><tr><th>Espaço — Térreo</th><th class="num">Área</th><th>Cenário C</th></tr></thead>
+            <thead><tr><th>Espaço — Térreo</th><th class="num">Área</th><th>Cenário 1</th></tr></thead>
             <tbody>
               ${e.areaBreakdown.terreo.map(r=>`<tr><td>${r[0]}</td><td class="num">${fmtM2(r[1])}</td><td>${r[2] ? '✅ Dentro' : '❌ Fora'}</td></tr>`).join('')}
             </tbody>
           </table>
           <table style="margin-top:14px;">
-            <thead><tr><th>Espaço — Mezanino</th><th class="num">Área</th><th>Cenário C</th></tr></thead>
+            <thead><tr><th>Espaço — Mezanino</th><th class="num">Área</th><th>Cenário 1</th></tr></thead>
             <tbody>
               ${e.areaBreakdown.mezanino.map(r=>`<tr><td>${r[0]}</td><td class="num">${fmtM2(r[1])}</td><td>${r[2] ? '✅ Dentro' : '❌ Fora'}</td></tr>`).join('')}
             </tbody>

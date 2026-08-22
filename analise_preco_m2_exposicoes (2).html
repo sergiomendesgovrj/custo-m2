@@ -329,6 +329,11 @@ tr.total-row td{font-weight:700;background:var(--paper-2);}
 .scenario-chip .sc-label{font-size:11px; font-weight:700; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.03em;}
 .scenario-chip .sc-value{font-family:'IBM Plex Mono',monospace; font-size:17px; color:var(--navy); font-weight:600; margin-top:3px;}
 .scenario-chip .sc-sub{font-size:11.5px; color:var(--ink-soft); margin-top:2px;}
+.scenario-chip .sc-metrics{margin-top:9px; padding-top:9px; border-top:1px solid var(--line); display:flex; flex-direction:column; gap:4px;}
+.scenario-chip .sc-metric{display:flex; justify-content:space-between; align-items:baseline; gap:8px; font-size:12px;}
+.scenario-chip .sc-metric .sc-mlabel{color:var(--ink-soft);}
+.scenario-chip .sc-metric .sc-mval{font-family:'IBM Plex Mono',monospace; font-weight:600; color:var(--navy); text-align:right;}
+.scenario-chip .sc-metric.hl .sc-mval{color:var(--green-deep); font-weight:700;}
 
 /* ===== Drilldown tree ===== */
 .dd-tree{font-size:13px;}
@@ -514,7 +519,7 @@ const EXPOS = [
     key:'maz-longa', museu:'Museu das Amazônias (MAZ)', expo:'Exposição de longa duração + temporária', cidade:'Belém',
     total:16813716.14, area:1472.50, rsm2:11418.48,
     isPlanned:true,
-    areaCenarioA:1995.34, rsm2CenarioA:8014.19,
+    areaCenarioA:1995.34, rsm2CenarioA:8014.19, totalCenarioA:15992581.15,
     areaCenarioB:378.23, rsm2CenarioB:2170.99, totalCenarioB:821134.99,
     areaCenarioCsemTemp:1094.27, totalCenarioCsemTemp:15992581.15, rsm2CenarioCsemTemp:14614.84,
     divider:'maz3', area_img:'mazPlantaTerreo', demo_img:'mazPlantaMezanino',
@@ -917,23 +922,39 @@ function renderDetail(e){
         <div class="scenario-row">
           <div class="scenario-chip active">
             <div class="sc-label">Cenário 1 · longa + temporária (principal)</div>
-            <div class="sc-value">${fmtM2(e.area)}</div>
-            <div class="sc-sub">${fmtInt$(e.rsm2)}/m² — 9 zonas temáticas + Pinguela + Foyer + Mezanino (temporária)</div>
+            <div class="sc-sub">9 zonas temáticas + Pinguela + Foyer + Mezanino (temporária)</div>
+            <div class="sc-metrics">
+              <div class="sc-metric"><span class="sc-mlabel">Metragem</span><span class="sc-mval">${fmtM2(e.area)}</span></div>
+              <div class="sc-metric"><span class="sc-mlabel">Investimento</span><span class="sc-mval">${fmtInt$(e.total)}</span></div>
+              <div class="sc-metric hl"><span class="sc-mlabel">Valor m²</span><span class="sc-mval">${fmtInt$(e.rsm2)}/m²</span></div>
+            </div>
           </div>
           <div class="scenario-chip">
             <div class="sc-label">Cenário 2 · só longa duração</div>
-            <div class="sc-value">${fmtM2(e.areaCenarioCsemTemp)}</div>
-            <div class="sc-sub">${fmtInt$(e.rsm2CenarioCsemTemp)}/m² — mesma área, sem Mezanino nem orçamento da temporária</div>
+            <div class="sc-sub">mesma área, sem Mezanino nem orçamento da temporária</div>
+            <div class="sc-metrics">
+              <div class="sc-metric"><span class="sc-mlabel">Metragem</span><span class="sc-mval">${fmtM2(e.areaCenarioCsemTemp)}</span></div>
+              <div class="sc-metric"><span class="sc-mlabel">Investimento</span><span class="sc-mval">${fmtInt$(e.totalCenarioCsemTemp)}</span></div>
+              <div class="sc-metric hl"><span class="sc-mlabel">Valor m²</span><span class="sc-mval">${fmtInt$(e.rsm2CenarioCsemTemp)}/m²</span></div>
+            </div>
           </div>
           <div class="scenario-chip">
             <div class="sc-label">Cenário 3 · só temporária</div>
-            <div class="sc-value">${fmtM2(e.areaCenarioB)}</div>
-            <div class="sc-sub">${fmtInt$(e.rsm2CenarioB)}/m² — só o Mezanino, com o orçamento próprio da temporária (sem obra)</div>
+            <div class="sc-sub">só o Mezanino, com o orçamento próprio da temporária (sem obra)</div>
+            <div class="sc-metrics">
+              <div class="sc-metric"><span class="sc-mlabel">Metragem</span><span class="sc-mval">${fmtM2(e.areaCenarioB)}</span></div>
+              <div class="sc-metric"><span class="sc-mlabel">Investimento</span><span class="sc-mval">${fmtInt$(e.totalCenarioB)}</span></div>
+              <div class="sc-metric hl"><span class="sc-mlabel">Valor m²</span><span class="sc-mval">${fmtInt$(e.rsm2CenarioB)}/m²</span></div>
+            </div>
           </div>
           <div class="scenario-chip">
             <div class="sc-label">Cenário 4 · planta total</div>
-            <div class="sc-value">${fmtM2(e.areaCenarioA)}</div>
-            <div class="sc-sub">${fmtInt$(e.rsm2CenarioA)}/m² — inclui loja, sanitários e áreas técnicas</div>
+            <div class="sc-sub">inclui loja, sanitários e áreas técnicas</div>
+            <div class="sc-metrics">
+              <div class="sc-metric"><span class="sc-mlabel">Metragem</span><span class="sc-mval">${fmtM2(e.areaCenarioA)}</span></div>
+              <div class="sc-metric"><span class="sc-mlabel">Investimento</span><span class="sc-mval">${fmtInt$(e.totalCenarioA)}</span></div>
+              <div class="sc-metric hl"><span class="sc-mlabel">Valor m²</span><span class="sc-mval">${fmtInt$(e.rsm2CenarioA)}/m²</span></div>
+            </div>
           </div>
         </div>
         ${infoBox('Ver espaços considerados, um a um (planta rev. 07)', `
